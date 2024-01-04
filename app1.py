@@ -67,9 +67,11 @@ if uploaded_file is not None:
             prediction_label = "Normal" if result >= 0.5 else "Infected"
             if prediction_label == "Normal":
                 
-                st.success(f"The image is predicted as {prediction_label} \U0001F60E")  # Emoji for success
+                st.success(f"The image is predicted as {prediction_label} \U0001F60E") 
             else:
                 st.warning(f"Warning: The image is predicted as {prediction_label} \U0001F635")
 st.markdown("---")
 st.write("Developed by Tejas Sharma")
 st.write("Copyright © 2023. All rights reserved.")
+github_link = "https://github.com/Tej-as1/Medical_Image_Classification_OpenCode" 
+st.write(f"Find more info and code on [Tej-as1]({github_link})")
