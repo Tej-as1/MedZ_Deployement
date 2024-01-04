@@ -59,7 +59,7 @@ if uploaded_file is not None:
     if st.button("Predict"):
         result = predict(uploaded_file)
         with st.spinner("Predicting..."):
-            time.sleep(2)
+            time.sleep(1)
             st.success("Prediction Complete!")
             
             # Display the prediction results with emojis
@@ -74,4 +74,4 @@ st.markdown("---")
 st.write("Developed by Tejas Sharma")
 st.write("Copyright © 2023. All rights reserved.")
 github_link = "https://github.com/Tej-as1/Medical_Image_Classification_OpenCode" 
-st.write(f"Find more info and code on [Tej-as1]({github_link})")
+st.write(f"Find code and model on [Tej-as1]({github_link}){"\U0001F517" }")
