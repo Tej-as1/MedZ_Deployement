@@ -75,11 +75,9 @@ if uploaded_file is not None:
         st.write("Prediction Results:")
         prediction_label = "Normal" if result >= 0.5 else "Infected"
         if prediction_label == "Normal":
-            st.success(f"The image is predicted as {prediction_label}")
-            st.image("success_icon.png", use_column_width=True)
+            st.success(f"The image is predicted as {prediction_label} \U0001F60E")  # Emoji for success
         else:
-            st.warning(f"Warning: The image is predicted as {prediction_label}")
-            st.image("horror_falling.gif", use_column_width=True)
+            st.warning(f"Warning: The image is predicted as {prediction_label} \U0001F635")
           
 st.markdown("---")
 st.write("Developed by Tejas Sharma")
