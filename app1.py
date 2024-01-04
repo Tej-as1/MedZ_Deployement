@@ -3,7 +3,6 @@ import tensorflow as tf
 from PIL import Image
 import numpy as np
 import time
-
 # Load the saved model
 model = tf.keras.models.load_model('CNN_model.h5')
 
@@ -57,20 +56,17 @@ if uploaded_file is not None:
     # Display the uploaded image with border
     st.image(uploaded_file, caption="Uploaded Image", use_column_width=True, output_format="JPEG")
 
-    # Centered Predict button
-    st.markdown("<center><h2>Predict</h2></center>", unsafe_allow_html=True)
-    col1, col2, col3 = st.columns([1, 2, 1])  # Adjust column ratios for centering
-    with col2:
         if st.button("Predict"):
             result = predict(uploaded_file)
             with st.spinner("Predicting..."):
-                time.sleep(3)
+                time.sleep(2)
             st.success("Prediction Complete!")
             
             # Display the prediction results with emojis
             st.subheader("Prediction Results:")
             prediction_label = "Normal" if result >= 0.5 else "Infected"
             if prediction_label == "Normal":
+                
                 st.success(f"The image is predicted as {prediction_label} \U0001F60E")  # Emoji for success
             else:
                 st.warning(f"Warning: The image is predicted as {prediction_label} \U0001F635")
