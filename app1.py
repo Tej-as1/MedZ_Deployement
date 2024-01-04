@@ -74,4 +74,5 @@ st.markdown("---")
 st.write("Developed by Tejas Sharma")
 st.write("Copyright © 2023. All rights reserved.")
 github_link = "https://github.com/Tej-as1/Medical_Image_Classification_OpenCode" 
-st.write(f"Find code and model on [Tej-as1]({github_link}){"\U0001F517" }")
+icon = "\U0001F517" 
+st.write(f"Find code and model on [Tej-as1]({github_link}){icon}")
