@@ -57,28 +57,23 @@ if uploaded_file is not None:
     # Display the uploaded image with border
     st.image(uploaded_file, caption="Uploaded Image", use_column_width=True, output_format="JPEG")
 
-    # Perform prediction
-    if st.button("Predict"):
-        result = predict(uploaded_file)
-        progress_bar = st.progress(0)
-        status_text = st.empty()
-          
-         
-        for i in range(100):
-            progress_bar.progress(i + 1)
-            status_text.text(f'Progress: {i}%')
-            time.sleep(0.00)
-        
-        status_text.text('Done!')
-        
-        # Display the prediction results
-        st.write("Prediction Results:")
-        prediction_label = "Normal" if result >= 0.5 else "Infected"
-        if prediction_label == "Normal":
-            st.success(f"The image is predicted as {prediction_label} \U0001F60E")  # Emoji for success
-        else:
-            st.warning(f"Warning: The image is predicted as {prediction_label} \U0001F635")
-          
+    # Centered Predict button
+    st.markdown("<center><h2>Predict</h2></center>", unsafe_allow_html=True)
+    col1, col2, col3 = st.columns([1, 2, 1])  # Adjust column ratios for centering
+    with col2:
+        if st.button("Predict"):
+            result = predict(uploaded_file)
+            with st.spinner("Predicting..."):
+                time.sleep(3)
+            st.success("Prediction Complete!")
+            
+            # Display the prediction results with emojis
+            st.subheader("Prediction Results:")
+            prediction_label = "Normal" if result >= 0.5 else "Infected"
+            if prediction_label == "Normal":
+                st.success(f"The image is predicted as {prediction_label} \U0001F60E")  # Emoji for success
+            else:
+                st.warning(f"Warning: The image is predicted as {prediction_label} \U0001F635")
 st.markdown("---")
 st.write("Developed by Tejas Sharma")
 st.write("Copyright © 2023. All rights reserved.")
