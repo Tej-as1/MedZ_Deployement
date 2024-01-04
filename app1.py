@@ -56,10 +56,10 @@ if uploaded_file is not None:
     # Display the uploaded image with border
     st.image(uploaded_file, caption="Uploaded Image", use_column_width=True, output_format="JPEG")
 
-        if st.button("Predict"):
-            result = predict(uploaded_file)
-            with st.spinner("Predicting..."):
-                time.sleep(2)
+    if st.button("Predict"):
+        result = predict(uploaded_file)
+        with st.spinner("Predicting..."):
+            time.sleep(2)
             st.success("Prediction Complete!")
             
             # Display the prediction results with emojis
