@@ -46,10 +46,10 @@ st.markdown(
 )
 
 # Streamlit app code
-st.title("Image Classification with Deep Learning")
+st.title("MedZ: Deep Learning based Medical Image Classifier")
 st.markdown("---")
 
-st.markdown('<p class="title">Upload an image and let the model predict its class.</p>', unsafe_allow_html=True)
+st.markdown('<p class="title">Upload an image to predict normal or infected.</p>', unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader("Choose an image...", type="jpg")
 
